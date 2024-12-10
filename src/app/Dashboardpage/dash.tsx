@@ -1,11 +1,11 @@
 "use client";
 
-import { FaCar, FaRegCalendarAlt, FaInbox } from "react-icons/fa";
-import { AiOutlineSetting } from "react-icons/ai";
-import { FiLogOut } from "react-icons/fi";
-import { MdInsights } from "react-icons/md";
-import { BiHelpCircle } from "react-icons/bi";
-import { BsToggleOn } from "react-icons/bs";
+// import { FaCar, FaRegCalendarAlt, FaInbox } from "react-icons/fa";
+// import { AiOutlineSetting } from "react-icons/ai";
+// import { FiLogOut } from "react-icons/fi";
+// import { MdInsights } from "react-icons/md";
+// import { BiHelpCircle } from "react-icons/bi";
+// import { BsToggleOn } from "react-icons/bs";
 
 const Dashboard = () => {
   return (
@@ -32,23 +32,23 @@ const Dashboard = () => {
           <h2 className="text-lg font-bold mb-6">Main Menu</h2>
           <ul className="space-y-4">
             <li className="flex items-center space-x-3 text-blue-500 font-bold">
-              <FaCar />
+{/*               <FaCar /> */}
               <span>Dashboard</span>
             </li>
             <li className="flex items-center space-x-3 text-gray-500 hover:text-blue-500">
-              <FaCar />
+{/*               <FaCar /> */}
               <span>Car Rent</span>
             </li>
             <li className="flex items-center space-x-3 text-gray-500 hover:text-blue-500">
-              <MdInsights />
+{/*               <MdInsights /> */}
               <span>Insight</span>
             </li>
             <li className="flex items-center space-x-3 text-gray-500 hover:text-blue-500">
-              <FaRegCalendarAlt />
+{/*               <FaRegCalendarAlt /> */}
               <span>Calendar</span>
             </li>
             <li className="flex items-center space-x-3 text-gray-500 hover:text-blue-500">
-              <FaInbox />
+{/*               <FaInbox /> */}
               <span>Inbox</span>
             </li>
           </ul>
@@ -56,19 +56,19 @@ const Dashboard = () => {
           <h2 className="text-lg font-bold mt-8 mb-6">Preferences</h2>
           <ul className="space-y-4">
             <li className="flex items-center space-x-3 text-gray-500 hover:text-blue-500">
-              <AiOutlineSetting />
+{/*               <AiOutlineSetting /> */}
               <span>Settings</span>
             </li>
             <li className="flex items-center space-x-3 text-gray-500 hover:text-blue-500">
-              <BiHelpCircle />
+{/*               <BiHelpCircle /> */}
               <span>Help & Center</span>
             </li>
             <li className="flex items-center space-x-3 text-gray-500 hover:text-blue-500">
-              <BsToggleOn />
+{/*               <BsToggleOn /> */}
               <span>Dark Mode</span>
             </li>
             <li className="flex items-center space-x-3 text-gray-500 hover:text-blue-500">
-              <FiLogOut />
+{/*               <FiLogOut /> */}
               <span>Log Out</span>
             </li>
           </ul>
