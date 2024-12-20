@@ -1,8 +1,12 @@
 "use client";
-
+import { AiOutlineSearch, AiOutlineSetting } from "react-icons/ai";
+import { FaHeart } from "react-icons/fa";
+import { BsBell } from "react-icons/bs";
 import Image from "next/image";
 import { useState } from "react";
-import look from "@/app/assests/Look.png"
+import look from "@/app/assests/Look.png";
+import image from "@/app/assests/Image.png";
+import Link from "next/link";
 
 const PaymentPage = () => {
   const [promoCode, setPromoCode] = useState("");
@@ -10,12 +14,69 @@ const PaymentPage = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
       {/* Header */}
-      <header className="bg-white px-4 py-4 shadow-md flex justify-between items-center">
-        <h1 className="text-blue-500 text-2xl font-bold">MORENT</h1>
-        <div className="flex items-center space-x-4">
-          <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+      <nav className="flex items-center justify-between px-6 py-4 bg-white shadow-md sm:px-10 lg:px-20">
+        {/* Logo */}
+        <div className="text-2xl font-bold text-blue-500">MORENT</div>
+
+        {/* Search Bar */}
+        <div className="hidden sm:flex items-center bg-gray-100 px-4 py-2 rounded-full w-1/2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              className="pr-2"
+              d="M19 11.5a7.5 7.5 0 1 1-15 0a7.5 7.5 0 0 1 15 0m-2.107 5.42l3.08 3.08"
+            />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search something here"
+            className="bg-transparent outline-none w-full text-sm text-gray-700"
+          />
+          <div className="text-gray-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M11 5H6a2 2 0 00-2 2v5m8 8h5a2 2 0 002-2v-5M5 11h1m12 0h1m-9 4v1m0-8V6m4 4v1m0-8V6"
+              />
+            </svg>
+          </div>
         </div>
-      </header>
+
+        {/* Icons and User Profile */}
+        <div className="flex items-center space-x-6">
+          <FaHeart className="text-gray-500 text-lg" />
+          <div className="relative">
+            <BsBell className="text-gray-500 text-lg" />
+            <span className="absolute top-0 right-0 bg-red-500 w-2 h-2 rounded-full"></span>
+          </div>
+          <AiOutlineSetting className="text-gray-500 text-lg" />
+          <div className="relative"></div>
+          <Image
+            src={image}
+            alt="User"
+            width={40}
+            height={40}
+            className="w-10 h-10 rounded-full object-cover"
+          />
+        </div>
+      </nav>
 
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 px-4 py-8 lg:px-8">
@@ -64,11 +125,11 @@ const PaymentPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Pick-Up Info */}
               <div>
-                <h4 className="text-sm font-bold text-gray-700 mb-2">Pick-Up</h4>
+                <h4 className="text-sm font-bold text-gray-700 mb-2">
+                  Pick-Up
+                </h4>
                 <div className="space-y-2">
-                  <select
-                    className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
+                  <select className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <option>Select your city</option>
                   </select>
                   <input
@@ -88,9 +149,7 @@ const PaymentPage = () => {
                   Drop-Off
                 </h4>
                 <div className="space-y-2">
-                  <select
-                    className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
+                  <select className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <option>Select your city</option>
                   </select>
                   <input
@@ -180,9 +239,11 @@ const PaymentPage = () => {
                 </span>
               </label>
             </div>
-            <button className="bg-blue-500 text-white px-6 py-2 rounded-lg mt-6 hover:bg-blue-600 transition">
-              Rent Now
-            </button>
+            <Link href="/Dashboardpage">
+              <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                Rent Now
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -225,6 +286,7 @@ const PaymentPage = () => {
                 value={promoCode}
                 onChange={(e) => setPromoCode(e.target.value)}
               />
+
               <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
                 Apply now
               </button>
@@ -276,7 +338,9 @@ const PaymentPage = () => {
           </div>
         </div>
         <div className="mt-10 border-t border-gray-200 pt-6 flex justify-between items-center">
-          <p className="text-sm text-gray-500">©2022 MORENT. All rights reserved</p>
+          <p className="text-sm text-gray-500">
+            ©2022 MORENT. All rights reserved
+          </p>
           <div className="flex space-x-6 text-sm text-gray-500">
             <a href="#">Privacy & Policy</a>
             <a href="#">Terms & Condition</a>
