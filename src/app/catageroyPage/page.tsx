@@ -1,9 +1,15 @@
 "use client";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { AiOutlineSearch, AiOutlineBell, AiOutlineSetting } from "react-icons/ai";
+import { BsBell } from "react-icons/bs";
+import {
+  AiOutlineSearch,
+  AiOutlineBell,
+  AiOutlineSetting,
+} from "react-icons/ai";
 import { useState } from "react";
 import PickUpSection from "../Homepage/pickup";
 import image1 from "/image1.png";
+import Link from "next/link";
 
 const CategoryPage = () => {
   const [maxPrice, setMaxPrice] = useState(100);
@@ -49,51 +55,61 @@ const CategoryPage = () => {
     <div className="bg-gray-100 min-h-screen">
       {/* Header */}
       <nav className="flex items-center justify-between px-6 py-4 bg-white shadow-md sm:px-10 lg:px-20">
-      {/* Logo */}
-      <div className="text-2xl font-bold text-blue-500">MORENT</div>
+        {/* Logo */}
+        <div className="text-2xl font-bold text-blue-500">MORENT</div>
 
-      {/* Search Bar */}
-      <div className="hidden sm:flex items-center bg-gray-100 px-4 py-2 rounded-full w-1/2">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" className="pr-2" d="M19 11.5a7.5 7.5 0 1 1-15 0a7.5 7.5 0 0 1 15 0m-2.107 5.42l3.08 3.08"/></svg>
-        <input
-          type="text"
-          placeholder="Search something here"
-          className="bg-transparent outline-none w-full text-sm text-gray-700"
-        />
-        <div className="text-gray-500">
+        {/* Search Bar */}
+        <div className="hidden sm:flex items-center bg-gray-100 px-4 py-2 rounded-full w-1/2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="currentColor"
-            className="w-5 h-5"
           >
             <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M11 5H6a2 2 0 00-2 2v5m8 8h5a2 2 0 002-2v-5M5 11h1m12 0h1m-9 4v1m0-8V6m4 4v1m0-8V6"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              className="pr-2"
+              d="M19 11.5a7.5 7.5 0 1 1-15 0a7.5 7.5 0 0 1 15 0m-2.107 5.42l3.08 3.08"
             />
           </svg>
+          <input
+            type="text"
+            placeholder="Search something here"
+            className="bg-transparent outline-none w-full text-sm text-gray-700"
+          />
+          <div className="text-gray-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M11 5H6a2 2 0 00-2 2v5m8 8h5a2 2 0 002-2v-5M5 11h1m12 0h1m-9 4v1m0-8V6m4 4v1m0-8V6"
+              />
+            </svg>
+          </div>
         </div>
-      </div>
 
-      {/* Icons and User Profile */}
-      <div className="flex items-center gap-4 sm:gap-6">
-      
-        <div className="relative">
-    
-          <span className="absolute top-0 right-0 bg-red-500 w-2 h-2 rounded-full"></span>
-        {/* </div>
-      //  <Image
-      //     src={image1}
-      //     alt="User Profile"/>
-       
-      // </div> */}
-      </div>
-      </div>
-    </nav>
-
+        {/* Icons and User Profile */}
+        <div className="flex items-center space-x-6">
+          <FaHeart className="text-gray-500 text-lg" />
+          <div className="relative">
+            <BsBell className="text-gray-500 text-lg" />
+            <span className="absolute top-0 right-0 bg-red-500 w-2 h-2 rounded-full"></span>
+          </div>
+          <AiOutlineSetting className="text-gray-500 text-lg" />
+          <div className="relative"></div>
+        </div>
+      </nav>
       {/* Pick-Up Section */}
       <div className="gap-10"></div>
       <PickUpSection />
@@ -108,14 +124,20 @@ const CategoryPage = () => {
           <div className="mb-6">
             <h3 className="text-sm font-bold text-gray-700 mb-2">Type</h3>
             <ul className="space-y-2">
-              {["Sport", "SUV", "MPV", "Sedan", "Coupe", "Hatchback"].map((type) => (
-                <li key={type} className="flex items-center space-x-2">
-                  <input type="checkbox" id={type} className="text-blue-500 focus:ring-blue-500" />
-                  <label htmlFor={type} className="text-sm text-gray-600">
-                    {type}
-                  </label>
-                </li>
-              ))}
+              {["Sport", "SUV", "MPV", "Sedan", "Coupe", "Hatchback"].map(
+                (type) => (
+                  <li key={type} className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      id={type}
+                      className="text-blue-500 focus:ring-blue-500"
+                    />
+                    <label htmlFor={type} className="text-sm text-gray-600">
+                      {type}
+                    </label>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -123,14 +145,20 @@ const CategoryPage = () => {
           <div className="mb-6">
             <h3 className="text-sm font-bold text-gray-700 mb-2">Capacity</h3>
             <ul className="space-y-2">
-              {["2 Person", "4 Person", "6 Person", "8 or More"].map((capacity) => (
-                <li key={capacity} className="flex items-center space-x-2">
-                  <input type="checkbox" id={capacity} className="text-blue-500 focus:ring-blue-500" />
-                  <label htmlFor={capacity} className="text-sm text-gray-600">
-                    {capacity}
-                  </label>
-                </li>
-              ))}
+              {["2 Person", "4 Person", "6 Person", "8 or More"].map(
+                (capacity) => (
+                  <li key={capacity} className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      id={capacity}
+                      className="text-blue-500 focus:ring-blue-500"
+                    />
+                    <label htmlFor={capacity} className="text-sm text-gray-600">
+                      {capacity}
+                    </label>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -153,7 +181,10 @@ const CategoryPage = () => {
         <main className="lg:col-span-9">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {cars.map((car, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition">
+              <div
+                key={index}
+                className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition"
+              >
                 <img
                   src={car.image}
                   alt={car.name}
@@ -173,9 +204,12 @@ const CategoryPage = () => {
                 <p className="text-sm text-gray-500">{car.specs}</p>
                 <div className="flex justify-between items-center mt-4">
                   <p className="text-blue-500 text-lg font-bold">{car.price}</p>
-                  <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
-                    Rent Now
-                  </button>
+
+                  <Link href="/carDeatailpage">
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                      Rent Now
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -196,7 +230,8 @@ const CategoryPage = () => {
           <div>
             <h2 className="text-blue-500 text-2xl font-bold">MORENT</h2>
             <p className="text-sm text-gray-500 mt-2">
-              Our vision is to provide convenience and help increase your sales business.
+              Our vision is to provide convenience and help increase your sales
+              business.
             </p>
           </div>
           <div>
@@ -228,7 +263,9 @@ const CategoryPage = () => {
           </div>
         </div>
         <div className="mt-10 border-t border-gray-200 pt-6 flex justify-between items-center">
-          <p className="text-sm text-gray-500">©2022 MORENT. All rights reserved</p>
+          <p className="text-sm text-gray-500">
+            ©2022 MORENT. All rights reserved
+          </p>
           <div className="flex space-x-6 text-sm text-gray-500">
             <a href="#">Privacy & Policy</a>
             <a href="#">Terms & Condition</a>
