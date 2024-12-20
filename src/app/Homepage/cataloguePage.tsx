@@ -70,8 +70,8 @@ const CataloguePage = () => {
                   <Image
                     src={carr.image}
                     alt={carr.name}
-                    width={120}
-                    height={74}
+                    width={534}
+                    height={836}
                     className="w-full h-40 object-cover rounded-lg"
                   />
                   <button className="absolute top-2 right-2">
