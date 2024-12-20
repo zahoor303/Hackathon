@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const RecommendationCar = () => {
@@ -102,7 +103,9 @@ const RecommendationCar = () => {
                     {car.discount}
                   </p>
                 )}
+              
               </div>
+              
               <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
                 Rent Now
               </button>
@@ -110,13 +113,16 @@ const RecommendationCar = () => {
           </div>
         ))}
       </div>
-
+      
       {/* Footer Section */}
       <div className="flex justify-between items-center mt-8">
         {/* Show More Button */}
-        <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-          Show More Cars
-        </button>
+       
+        <Link href="/catageroyPage">
+  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+    Show More Cars
+  </button>
+</Link>
 
         {/* Total Cars */}
         <span className="text-gray-500 text-sm">120 Cars</span>
